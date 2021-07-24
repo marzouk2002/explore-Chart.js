@@ -36,10 +36,10 @@ function MyChart() {
                         position:'bottom'
                     },
                     scales: {
-                        y: {
+                        yAxes: [{
                             position: 'right',
                             display: false
-                        }
+                        }]
                     }
                 }}
             />
