@@ -21,7 +21,7 @@ function MyChart() {
                     responsive: true,
                     title:{
                     display:true,
-                    text:'The most populated countries in the world',
+                    text:'My custom chart',
                     fontSize:25
                     },
                     legend:{
