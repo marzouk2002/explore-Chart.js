@@ -6,13 +6,20 @@ function MyChart() {
         <>
             <Line
                 data={{
-                    labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars'],
+                    labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars', 'aaa' , "ddd"],
                     datasets:[
                         {
-                          label:'Population',
-                          data:[ 1440000000, 1370000000, 330160000, 271350000, 221000000 ],
+                          label:'price',
+                          data:[ 144, 137,137,310, 200 ],
                           fill: false,
                           borderColor: 'rgb(75, 192, 192)',
+                          tension: 0
+                        },
+                        {
+                          label:'prediction',
+                          data:[ null, null, null, null, 200, 150, 170 ],
+                          fill: false,
+                          borderColor: 'black',
                           tension: 0
                         }
                     ]
@@ -20,17 +27,18 @@ function MyChart() {
                 options={{
                     responsive: true,
                     title:{
-                    display:true,
-                    text:'My custom chart',
-                    fontSize:25
+                        display: true,
+                        text:'My custom chart',
+                        fontSize:25
                     },
                     legend:{
-                    display:false,
-                    position:'bottom'
+                        display: true,
+                        position:'bottom'
                     },
                     scales: {
                         y: {
-                            position: 'right'
+                            position: 'right',
+                            display: false
                         }
                     }
                 }}
