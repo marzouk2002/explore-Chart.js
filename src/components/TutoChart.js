@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2'
 
 function TutoChart() {
     return (
-        <div>
+        <>
             <Bar
                 data={{
                     labels: ['China', 'India', 'USA', 'Indonesia', 'Pakistan'],
@@ -33,7 +33,7 @@ function TutoChart() {
                     }
                 }}
             />
-        </div>
+        </>
     )
 }
 

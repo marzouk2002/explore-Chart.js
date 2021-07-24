@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2'
 
 function MyChart() {
     return (
-        <div>
+        <>
             <Line
                 data={{
                     labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars'],
@@ -35,7 +35,7 @@ function MyChart() {
                     }
                 }}
             />
-        </div>
+        </>
     )
 }
 
