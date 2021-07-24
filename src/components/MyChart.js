@@ -10,7 +10,7 @@ function MyChart() {
                     datasets:[
                         {
                           label:'price',
-                          data:[ 144, 137,137,310, 200 ],
+                          data:[ 144, 137,137,231, 200 ],
                           fill: false,
                           borderColor: 'rgb(75, 192, 192)',
                           tension: 0
@@ -37,8 +37,7 @@ function MyChart() {
                     },
                     scales: {
                         yAxes: [{
-                            position: 'right',
-                            display: false
+                            position: 'right'
                         }]
                     }
                 }}
