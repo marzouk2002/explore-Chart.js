@@ -6,16 +6,19 @@ function MyChart() {
         <div>
             <Line
                 data={{
-                    labels: ['China', 'India', 'USA', 'Indonesia', 'Pakistan'],
+                    labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars'],
                     datasets:[
-                      {
-                        label:'Population',
-                        data:[ 1440000000, 1370000000, 330160000, 271350000, 221000000 ],
-                        fill: false
-                      }
+                        {
+                          label:'Population',
+                          data:[ 1440000000, 1370000000, 330160000, 271350000, 221000000 ],
+                          fill: false,
+                          borderColor: 'rgb(75, 192, 192)',
+                          tension: 0
+                        }
                     ]
                 }}
                 options={{
+                    responsive: true,
                     title:{
                     display:true,
                     text:'The most populated countries in the world',
@@ -24,6 +27,11 @@ function MyChart() {
                     legend:{
                     display:false,
                     position:'bottom'
+                    },
+                    scales: {
+                        y: {
+                            position: 'right'
+                        }
                     }
                 }}
             />
