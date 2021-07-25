@@ -4,6 +4,14 @@ import { Line } from 'react-chartjs-2'
 function MyChart() {
     const [ data, setData ] = useState([ 21, 40, 17, 59, 36])
 
+    setInterval(() => {
+        let arr = [...data]
+        arr.shift()
+        arr.push(Math.random()*100)
+        setData(arr)
+        
+    }, 1000)
+
     return (
         <>
             <Line
