@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 
 function MyChart() {
     const [ data, setData ] = useState([ 21, 40, 17, 59, 36])
 
-    setInterval(() => {
-        let arr = [...data]
-        arr.shift()
-        arr.push(Math.random()*100)
-        setData(arr)
-        
-    }, 1000)
+    useEffect(() => {
+        setInterval(() => {
+            let  [ fisrt, ...arr ] = data
+            arr.push(Math.random()*100)
+            setData(arr)
+            
+        }, 1000)
+    }, [])
 
     return (
         <>
@@ -45,6 +46,28 @@ function MyChart() {
                     legend:{
                         display: true,
                         position:'bottom'
+                    },
+                    transitions: {
+                        show: {
+                            animations: {
+                                x: {
+                                from: 0
+                                },
+                                y: {
+                                from: 0
+                                }
+                            }
+                        }
+                    },
+                    hide: {
+                        animations: {
+                          x: {
+                            to: 0
+                          },
+                          y: {
+                            to: 0
+                          }
+                        }
                     },
                     scales: {
                         yAxes: [{
