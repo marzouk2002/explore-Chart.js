@@ -1,27 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Line } from 'react-chartjs-2'
 
 function MyChart() {
+    const [ data, setData ] = useState([ 21, 40, 17, 59, 36])
+
     return (
         <>
             <Line
                 data={{
-                    labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars', 'aaa' , "ddd"],
+                    labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars'],
                     datasets:[
                         {
-                          label:'price',
-                          data:[ 144, 137,137,231, 200 ],
+                          label: 'price',
+                          data: data,
                           fill: false,
                           borderColor: 'rgb(75, 192, 192)',
                           tension: 0
-                        },
-                        {
-                          label:'prediction',
-                          data:[ null, null, null, null, 200, 150, 170 ],
-                          fill: false,
-                          borderColor: 'black',
-                          tension: 0
                         }
+                        // ,
+                        // {
+                        //   label:'prediction',
+                        //   data:[ null, null, null, null, 200, 150, 170 ],
+                        //   fill: false,
+                        //   borderColor: 'black',
+                        //   tension: 0
+                        // }
                     ]
                 }}
                 options={{
