@@ -7,10 +7,10 @@ function MyChart() {
     useEffect(() => {
         setInterval(() => {
             let  [ fisrt, ...arr ] = data
-            arr.push(Math.random()*100)
+            arr.push(50)
             setData(arr)
             
-        }, 1000)
+        }, 1500)
     }, [])
 
     return (
@@ -24,7 +24,8 @@ function MyChart() {
                           data: data,
                           fill: false,
                           borderColor: 'rgb(75, 192, 192)',
-                          tension: 0
+                          tension: 0,
+                          animations: null
                         }
                         // ,
                         // {
@@ -71,8 +72,12 @@ function MyChart() {
                     },
                     scales: {
                         yAxes: [{
+                            beginAtZero: true,
                             position: 'right'
-                        }]
+                        }],
+                        y: {
+                            beginAtZero: true,
+                        },
                     }
                 }}
             />
