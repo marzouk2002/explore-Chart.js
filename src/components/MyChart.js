@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 
+const months = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
+const days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
+
 function MyChart() {
     const [ data, setData ] = useState([ 21, 40, 17, 59, 36])
     const [ labels, setLabels] = useState(['Nov', 'Dec', 'Jun', 'Feb', 'Mars'])
