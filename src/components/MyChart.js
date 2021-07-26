@@ -3,6 +3,7 @@ import { Line } from 'react-chartjs-2'
 
 function MyChart() {
     const [ data, setData ] = useState([ 21, 40, 17, 59, 36])
+    const [ labels, setLabels] = useState(['Nov', 'Dec', 'Jun', 'Feb', 'Mars'])
 
     useEffect(() => {
         setInterval(() => {
@@ -17,7 +18,7 @@ function MyChart() {
         <>
             <Line
                 data={{
-                    labels: ['Nov', 'Dec', 'Jun', 'Feb', 'Mars'],
+                    labels: labels,
                     datasets:[
                         {
                           label: 'price',
