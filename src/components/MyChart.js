@@ -5,21 +5,30 @@ const months = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", 
 const days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
 
 function MyChart({scale}) {
-    const [ data, setData ] = useState([ 21, 40, 17, 59, 36])
+    const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21])
     const [ labels, setLabels] = useState(['Nov', 'Dec', 'Jun', 'Feb', 'Mars'])
 
     useEffect(() => {
         setInterval(() => {
             let  [ fisrt, ...arr ] = data
-            arr.push(50)
+            arr.push(Math.random()*100)
             setData(arr)
             
         }, 1500)
     }, [])
 
     useEffect(() => {
-        
-    }, [])
+        switch(scale) {
+            case "a":
+                setLabels(months.slice(0, 6));
+                break
+            case "b":
+                setLabels(days.slice(0, 6));
+                break
+            default:
+                setLabels([])
+        }
+    }, [scale])
 
     return (
         <>
