@@ -7,6 +7,10 @@ class DataTime {
     getMonths(n) {
         return this.months.splice(0, 6)
     }
+
+    getDays(n) {
+        return this.days.splice(0, 6)
+    }
 }
 
 export default DataTime
