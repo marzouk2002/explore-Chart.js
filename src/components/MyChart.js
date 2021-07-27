@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
+import DataTime from '../Classes'
 
 const months = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
 const days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
@@ -18,12 +19,13 @@ function MyChart({scale}) {
     }, [])
 
     useEffect(() => {
+        const dataTime = new DataTime()
         switch(scale) {
             case "a":
-                setLabels(months.slice(0, 6));
+                setLabels(dataTime.getMonths());
                 break
             case "b":
-                setLabels(days.slice(0, 6));
+                setLabels(dataTime.getDays());
                 break
             default:
                 setLabels([])
