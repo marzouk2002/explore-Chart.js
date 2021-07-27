@@ -4,10 +4,6 @@ class DataTime {
         this.days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
     }
 
-    getMonths(n) {
-        return this.months.splice(0, 6)
-    }
-
     getDays(n) {
         return this.days.splice(0, 6)
     }
@@ -17,7 +13,13 @@ class DataTime {
     }
 
     get oneYear() {
-        return this
+        const d = new Date();
+        const currentYear = d.getFullYear();
+        const currentMonth = d.getMonth();
+
+        const Arr = this.months.slice(0, currentMonth)
+
+        return Arr
     }
 
     get sixMonths() {
@@ -52,5 +54,6 @@ class DataTime {
         return this
     }
 }
+
 
 export default DataTime
