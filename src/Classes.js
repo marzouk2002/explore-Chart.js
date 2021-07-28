@@ -59,8 +59,4 @@ class DataTime {
     }
 }
 
-const data = new DataTime()
-
-console.log(data.oneYear)
-
-// export default DataTime
+export default DataTime
