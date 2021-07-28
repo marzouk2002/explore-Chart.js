@@ -1,4 +1,4 @@
-class DataTime {
+class DateTime {
     constructor() {
         this.months = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
         this.days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
@@ -59,4 +59,4 @@ class DataTime {
     }
 }
 
-export default DataTime
+export default DateTime

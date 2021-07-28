@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
-import DataTime from '../Classes'
-
-const months = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
-const days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
+import DateTime from '../Classes'
 
 function MyChart({scale}) {
-    const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21])
+    const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21, 45, 15, 12, 11, 39, 32])
     const [ labels, setLabels] = useState(['Nov', 'Dec', 'Jun', 'Feb', 'Mars'])
 
-    useEffect(() => {
-        setInterval(() => {
-            let  [ fisrt, ...arr ] = data
-            arr.push(Math.random()*100)
-            setData(arr)
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         let  [ fisrt, ...arr ] = data
+    //         arr.push(Math.random()*50)
+    //         setData(arr)
             
-        }, 1500)
-    }, [])
+    //     }, 1500)
+    // }, [])
 
     useEffect(() => {
-        const dataTime = new DataTime()
+        const dateTime = new DateTime()
         switch(scale) {
             case "a":
-                setLabels(dataTime.getMonths());
+                setLabels(dateTime.oneYear);
                 break
             case "b":
-                setLabels(dataTime.getDays());
+                setLabels(dateTime.getDays());
                 break
             default:
                 setLabels([])
