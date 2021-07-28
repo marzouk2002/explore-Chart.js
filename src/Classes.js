@@ -15,9 +15,13 @@ class DataTime {
     get oneYear() {
         const d = new Date();
         const currentYear = d.getFullYear();
-        const currentMonth = d.getMonth();
+        const currentMonth = d.getMonth() + 1;
 
-        const Arr = this.months.slice(0, currentMonth)
+        let Arr = this.months.slice(0, currentMonth).map(month => month + " - " + currentYear)
+        if(Arr.length < 12) {
+            const lastArr = this.months.slice(currentMonth).map(month => month + " - " + (currentYear - 1))
+            Arr = [ ...lastArr, ...Arr]
+        }
 
         return Arr
     }
@@ -55,5 +59,8 @@ class DataTime {
     }
 }
 
+const data = new DataTime()
 
-export default DataTime
+console.log(data.oneYear)
+
+// export default DataTime
