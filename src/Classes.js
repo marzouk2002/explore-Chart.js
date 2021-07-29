@@ -47,7 +47,15 @@ class DateTime {
     }
 
     get oneWeek() {
-        return this
+        const oneDayGap = 1000 * 3600 * 24
+        let Arr = []
+
+        for(let i = 0; i < 7; i++) {
+            const d = new Date(Date.now() - (i * oneDayGap))
+            Arr.unshift(`${this.days[d.getDay()]} ${d.getDate()}`)
+        }
+
+        return(Arr)
     }
 
     get oneDay() {
@@ -73,6 +81,6 @@ class DateTime {
 
 const test = new DateTime()
 
-console.log(test.oneMonth)
+console.log(test.oneWeek)
 
 // export default DateTime
