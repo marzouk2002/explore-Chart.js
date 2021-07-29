@@ -4,10 +4,6 @@ class DateTime {
         this.days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
     }
 
-    getDays(n) {
-        return this.days.splice(0, 6)
-    }
-
     get fiveYears() {
         return this
     }
