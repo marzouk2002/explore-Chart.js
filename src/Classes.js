@@ -35,7 +35,15 @@ class DateTime {
     }
 
     get oneMonth() {
-        return this
+        const fiveDaysGap = 1000 * 3600 * 24 * 5
+        let Arr = []
+
+        for(let i = 0; i <= 6; i++) {
+            const d = new Date(Date.now() - (i * fiveDaysGap))
+            Arr.unshift(`${this.months[d.getMonth()]} ${d.getDate()}`)
+        }
+
+        return(Arr)
     }
 
     get oneWeek() {
@@ -65,6 +73,6 @@ class DateTime {
 
 const test = new DateTime()
 
-console.log(test.sixMonths)
+console.log(test.oneMonth)
 
 // export default DateTime
