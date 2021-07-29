@@ -23,7 +23,15 @@ class DateTime {
     }
 
     get sixMonths() {
-        return this
+        const halfMonthLen = 1000 * 3600 * 24 * 15
+        let Arr = []
+
+        for(let i = 0; i < 12; i++) {
+            const d = new Date(Date.now() - (i * halfMonthLen))
+            Arr.unshift(`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear().toString().slice(-2)}`)
+        }
+
+        return(Arr)
     }
 
     get oneMonth() {
@@ -55,4 +63,8 @@ class DateTime {
     }
 }
 
-export default DateTime
+const test = new DateTime()
+
+console.log(test.sixMonths)
+
+// export default DateTime
