@@ -67,7 +67,15 @@ class DateTime {
     }
 
     get oneDay() {
-        return this
+        const twoHoursGap = 1000 * 3600 * 2
+        let Arr = []
+
+        for(let i = 0; i <= 12; i++) {
+            const d = new Date(Date.now() - (i * twoHoursGap))
+            Arr.unshift(`${this.days[d.getDay()]} - ${d.getHours()}/${d.getMinutes()}`)
+        }
+
+        return(Arr)
     }
 
     get fourHours() {
@@ -89,6 +97,6 @@ class DateTime {
 
 const test = new DateTime()
 
-console.log(test.sixMonths)
+console.log(test.oneDay)
 
 // export default DateTime
