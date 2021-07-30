@@ -72,18 +72,36 @@ class DateTime {
 
         for(let i = 0; i <= 12; i++) {
             const d = new Date(Date.now() - (i * twoHoursGap))
-            Arr.unshift(`${this.days[d.getDay()]} - ${d.getHours()}/${d.getMinutes()}`)
+            Arr.unshift(`${this.days[d.getDay()]} - ${d.getHours()}:${d.getMinutes()}`)
         }
 
         return(Arr)
     }
 
     get fourHours() {
-        return this
+        const halfHourGap = 1000 * 1800
+        let Arr = []
+
+        for(let i = 0; i <= 8; i++) {
+            const d = new Date(Date.now() - (i * halfHourGap))
+            const curMinute = d.getMinutes()
+            Arr.unshift(`${this.days[d.getDay()]} - ${d.getHours()}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
+        }
+
+        return(Arr)
     }
 
     get oneHour() {
-        return this
+        const fiveMinutesGap = 1000 * 60 * 5
+        let Arr = []
+
+        for(let i = 0; i <= 12; i++) {
+            const d = new Date(Date.now() - (i * fiveMinutesGap))
+            const curMinute = d.getMinutes()
+            Arr.unshift(`${d.getHours()}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
+        }
+
+        return(Arr)
     }
 
     get halfHour() {
@@ -97,6 +115,6 @@ class DateTime {
 
 const test = new DateTime()
 
-console.log(test.oneDay)
+console.log(test.oneHour)
 
 // export default DateTime
