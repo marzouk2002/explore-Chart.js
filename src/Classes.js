@@ -5,7 +5,15 @@ class DateTime {
     }
 
     get fiveYears() {
-        return this
+        const halfYearLen = 1000 * 3600 * 4380
+        let Arr = []
+
+        for(let i = 0; i < 11; i++) {
+            const d = new Date(Date.now() - (i * halfYearLen))
+            Arr.unshift(`${this.months[d.getMonth()]} - ${d.getFullYear()}`)
+        }
+
+        return(Arr)
     }
 
     get oneYear() {
@@ -26,7 +34,7 @@ class DateTime {
         const halfMonthLen = 1000 * 3600 * 24 * 15
         let Arr = []
 
-        for(let i = 0; i < 12; i++) {
+        for(let i = 0; i <= 12; i++) {
             const d = new Date(Date.now() - (i * halfMonthLen))
             Arr.unshift(`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear().toString().slice(-2)}`)
         }
@@ -81,6 +89,6 @@ class DateTime {
 
 const test = new DateTime()
 
-console.log(test.oneWeek)
+console.log(test.sixMonths)
 
 // export default DateTime
