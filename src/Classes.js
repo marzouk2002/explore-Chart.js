@@ -105,7 +105,17 @@ class DateTime {
     }
 
     get halfHour() {
-        return this
+        const fiveMinutesGap = 1000 * 60 * 2.5
+        let Arr = []
+
+        for(let i = 0; i <= 12; i++) {
+            const d = new Date(Date.now() - (i * fiveMinutesGap))
+            const curMinute = d.getMinutes()
+            const curSecond = d.getSeconds()
+            Arr.unshift(`${d.getHours()}:${curMinute < 10 ? '0'+curMinute : curMinute}:${curSecond < 10 ? '0'+curSecond : curSecond}`)
+        }
+
+        return(Arr)
     }
 
     get  liveScale() {
@@ -115,6 +125,6 @@ class DateTime {
 
 const test = new DateTime()
 
-console.log(test.oneHour)
+console.log(test.halfHour)
 
 // export default DateTime
