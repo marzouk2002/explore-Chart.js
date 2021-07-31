@@ -36,11 +36,14 @@ function MyChart({scale}) {
             case "1D":
                 setLabels(dateTime.oneDay);
                 break
+            case "4H":
+                setLabels(dateTime.fourHours);
+                break
             case "1H":
                 setLabels(dateTime.oneHour);
                 break
             case "30M":
-                setLabels(dateTime.oneHour);
+                setLabels(dateTime.halfHour);
                 break
             default:
                 setLabels([])

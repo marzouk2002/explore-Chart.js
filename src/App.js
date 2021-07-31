@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <TutoChart/>
-      <MyChart scale="1D"/>
+      <MyChart scale="30M"/>
     </div>
   );
 }
