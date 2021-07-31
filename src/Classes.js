@@ -36,7 +36,7 @@ class DateTime {
 
         for(let i = 0; i <= 12; i++) {
             const d = new Date(Date.now() - (i * halfMonthLen))
-            Arr.unshift(`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear().toString().slice(-2)}`)
+            Arr.unshift(`${d.getDate()} / ${d.getMonth() + 1} / ${d.getFullYear().toString().slice(-2)}`)
         }
 
         return(Arr)
@@ -123,8 +123,4 @@ class DateTime {
     }
 }
 
-const test = new DateTime()
-
-console.log(test.halfHour)
-
-// export default DateTime
+export default DateTime
