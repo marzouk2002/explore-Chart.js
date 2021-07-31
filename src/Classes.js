@@ -87,7 +87,8 @@ class DateTime {
         for(let i = 0; i <= 8; i++) {
             const d = new Date(Date.now() - (i * halfHourGap))
             const curMinute = d.getMinutes()
-            Arr.unshift(`${this.days[d.getDay()]} - ${d.getHours()}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
+            const curHour = d.getHours()
+            Arr.unshift(`${this.days[d.getDay()]} - ${curHour < 10 ? '0'+curHour : curHour}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
         }
 
         return(Arr)
@@ -100,7 +101,8 @@ class DateTime {
         for(let i = 0; i <= 12; i++) {
             const d = new Date(Date.now() - (i * fiveMinutesGap))
             const curMinute = d.getMinutes()
-            Arr.unshift(`${d.getHours()}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
+            const curHour = d.getHours()
+            Arr.unshift(`${curHour < 10 ? '0'+curHour : curHour}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
         }
 
         return(Arr)
@@ -112,9 +114,10 @@ class DateTime {
 
         for(let i = 0; i <= 12; i++) {
             const d = new Date(Date.now() - (i * fiveMinutesGap))
+            const curHour = d.getHours()
             const curMinute = d.getMinutes()
             const curSecond = d.getSeconds()
-            Arr.unshift(`${d.getHours()}:${curMinute < 10 ? '0'+curMinute : curMinute}:${curSecond < 10 ? '0'+curSecond : curSecond}`)
+            Arr.unshift(`${curHour < 10 ? '0'+curHour : curHour}:${curMinute < 10 ? '0'+curMinute : curMinute}:${curSecond < 10 ? '0'+curSecond : curSecond}`)
         }
 
         return(Arr)
