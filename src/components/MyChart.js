@@ -33,6 +33,9 @@ function MyChart({scale}) {
             case "1W":
                 setLabels(dateTime.oneWeek);
                 break
+            case "1D":
+                setLabels(dateTime.oneDay);
+                break
             case "1H":
                 setLabels(dateTime.oneHour);
                 break

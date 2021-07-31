@@ -72,7 +72,9 @@ class DateTime {
 
         for(let i = 0; i <= 12; i++) {
             const d = new Date(Date.now() - (i * twoHoursGap))
-            Arr.unshift(`${this.days[d.getDay()]} - ${d.getHours()}:${d.getMinutes()}`)
+            const curMinute = d.getMinutes()
+            const curHour = d.getHours()
+            Arr.unshift(`${this.days[d.getDay()]} - ${curHour < 10 ? '0'+curHour : curHour}:${curMinute < 10 ? '0'+curMinute : curMinute}`)
         }
 
         return(Arr)
