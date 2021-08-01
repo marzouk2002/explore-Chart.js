@@ -110,11 +110,13 @@ function MyChart({scale}) {
                     scales: {
                         yAxes: [{
                             beginAtZero: true,
-                            position: 'right'
-                        }],
-                        y: {
-                            beginAtZero: true,
-                        },
+                            position: 'right',
+                            ticks: {
+                                beginAtZero: true,
+                                max: 100,
+                                min: 0
+                            }
+                        }]
                     }
                 }}
             />
