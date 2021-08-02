@@ -61,6 +61,7 @@ function MyChart({scale}) {
                           data: data,
                           fill: false,
                           borderColor: 'rgb(75, 192, 192)',
+                          radius: 5,
                           tension: 0,
                           animations: null
                         }
