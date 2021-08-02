@@ -97,14 +97,28 @@ function MyChart({scale}) {
                             }
                         }
                     },
-                    hide: {
-                        animations: {
-                          x: {
-                            to: 0
+                    options: {
+                        transitions: {
+                          show: {
+                            animations: {
+                              x: {
+                                from: 0
+                              },
+                              y: {
+                                from: 0
+                              }
+                            }
                           },
-                          y: {
-                            to: 0
-                          }
+                          hide: {
+                            animations: {
+                                x: {
+                                    to: 0
+                                },
+                                y: {
+                                    to: 0
+                                }
+                            }
+                            }
                         }
                     },
                     scales: {
@@ -113,8 +127,8 @@ function MyChart({scale}) {
                             position: 'right',
                             ticks: {
                                 beginAtZero: true,
-                                max: 100,
-                                min: 0
+                                max: 50,
+                                min: 0,
                             }
                         }]
                     }
