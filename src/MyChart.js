@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
-import DateTime from '../Classes'
+import DateTime from './Classes'
 
 function MyChart({scale}) {
     const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21, 45, 15, 12, 11, 39, 32])
@@ -64,8 +64,7 @@ function MyChart({scale}) {
                           radius: 5,
                           tension: 0,
                           animations: null
-                        }
-                        // ,
+                        },
                         // {
                         //   label:'prediction',
                         //   data:[ null, null, null, null, 200, 150, 170 ],

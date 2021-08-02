@@ -1,5 +1,5 @@
 import './App.css';
-import MyChart from './components/MyChart';
+import MyChart from './MyChart';
 import TutoChart from './components/TutoChart';
 
 function App() {
