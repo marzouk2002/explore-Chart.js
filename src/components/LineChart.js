@@ -1,7 +1,8 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 
-function LineChart({ data, labels }) {
+function LineChart({ data, labels, vuePred, predLabel, predictions }) {
+
     return (
         <>
             <Line
@@ -17,13 +18,13 @@ function LineChart({ data, labels }) {
                           tension: 0,
                           animations: null
                         },
-                        // {
-                        //   label:'prediction',
-                        //   data:[ null, null, null, null, 200, 150, 170 ],
-                        //   fill: false,
-                        //   borderColor: 'black',
-                        //   tension: 0
-                        // }
+                        {
+                          label:'prediction',
+                          data:[ null, null, null, null, 47, 10, 17 ],
+                          fill: false,
+                          borderColor: 'black',
+                          tension: 0
+                        }
                     ]
                 }}
                 options={{
