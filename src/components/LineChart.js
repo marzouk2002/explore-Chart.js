@@ -2,12 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
 
 function LineChart({ dataset, labels, vuePred, predLabel, predictions }) {
-    const [ usedData, setUseData ] = useState(dataset)
+    const [ usedData, setUseData ] = useState([dataset])
     const [ usedLabels, setUseLabels ] = useState([...labels])
 
     useEffect(() => {
         if(vuePred) {
-
+            setUseLabels([...labels, ...predLabel])
+            const origData = dataset.data
+            const origLength = origData.length
+            setUseData([dataset, {
+                  label:'prediction',
+                  data:[ ...Array(origLength-1).fill(null), origData[origLength-1], ...predictions ],
+                  fill: false,
+                  borderColor: 'black',
+                  tension: 0
+                }])
         }
     }, [vuePred])
 
@@ -16,16 +25,9 @@ function LineChart({ dataset, labels, vuePred, predLabel, predictions }) {
             <Line
                 data={{
                     labels: usedLabels,
-                    datasets:[
-                        dataset,
-                        {
-                          label:'prediction',
-                          data:[ null, null, null, null],
-                          fill: false,
-                          borderColor: 'black',
-                          tension: 0
-                        }
-                    ]
+                    datasets:
+                        usedData
+                        
                 }}
                 options={{
                     responsive: true,
