@@ -17,8 +17,11 @@ function LineChart({ dataset, labels, vuePred, predLabel, predictions }) {
                   borderColor: 'black',
                   tension: 0
                 }])
+        } else {
+            setUseData([dataset])
+            setUseLabels([...labels])
         }
-    }, [vuePred])
+    }, [labels, vuePred, dataset, predLabel, predictions])
 
     return (
         <>

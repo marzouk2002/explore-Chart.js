@@ -7,8 +7,8 @@ function MyChart({scale}) {
     const [ vuePred, setVuePred ] = useState(false)
     const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21, 45, 15, 12])
     const [ predictions, setPredictions ] = useState([ 15, 18])
-    const [ predLabel, setPredLabel ] = useState([ 15, 18])
-    const [ labels, setLabels] = useState(['20:00', '20:30'])
+    const [ predLabel, setPredLabel] = useState(['20:00', '20:30'])
+    const [ labels, setLabels] = useState([])
 
     // useEffect(() => {
     //     setInterval(() => {
