@@ -56,7 +56,15 @@ function MyChart({scale}) {
 
     return (
         <>
-            <LineChart data={data} labels={labels} vuePred={vuePred} predLabel={predLabel} predictions={predictions}/>
+            <LineChart dataset={[{
+                          label: 'price',
+                          data: data,
+                          fill: false,
+                          borderColor: 'rgb(75, 192, 192)',
+                          radius: 5,
+                          tension: 0,
+                          animations: null
+                        }]} labels={labels} vuePred={vuePred} predLabel={predLabel} predictions={predictions}/>
         </>
     )
 }

@@ -1,26 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
 
-function LineChart({ data, labels, vuePred, predLabel, predictions }) {
+function LineChart({ dataset, labels, vuePred, predLabel, predictions }) {
+    const [ usedData, setUseData ] = useState(dataset)
+    const [ usedLabels, setUseLabels ] = useState([...labels])
+
+    useEffect(() => {
+        if(vuePred) {
+
+        }
+    }, [vuePred])
 
     return (
         <>
             <Line
                 data={{
-                    labels: labels,
+                    labels: usedLabels,
                     datasets:[
-                        {
-                          label: 'price',
-                          data: data,
-                          fill: false,
-                          borderColor: 'rgb(75, 192, 192)',
-                          radius: 5,
-                          tension: 0,
-                          animations: null
-                        },
+                        dataset,
                         {
                           label:'prediction',
-                          data:[ null, null, null, null, 47, 10, 17 ],
+                          data:[ null, null, null, null],
                           fill: false,
                           borderColor: 'black',
                           tension: 0
