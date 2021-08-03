@@ -4,8 +4,11 @@ import DateTime from './Classes'
 import LineChart from './components/LineChart'
 
 function MyChart({scale}) {
-    const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21, 45, 15, 12, 11, 39, 32])
-    const [ labels, setLabels] = useState([])
+    const [ vuePred, setVuePred ] = useState(false)
+    const [ data, setData ] = useState([ 21, 40, 17, 48, 36, 21, 45, 15, 12])
+    const [ predictions, setPredictions ] = useState([ 15, 18])
+    const [ predLabel, setPredLabel ] = useState([ 15, 18])
+    const [ labels, setLabels] = useState(['20:00', '20:30'])
 
     // useEffect(() => {
     //     setInterval(() => {
@@ -53,7 +56,7 @@ function MyChart({scale}) {
 
     return (
         <>
-            <LineChart data={data} labels={labels}/>
+            <LineChart data={data} labels={labels} vuePred={vuePred} predLabel={predLabel} predictions={predictions}/>
         </>
     )
 }
