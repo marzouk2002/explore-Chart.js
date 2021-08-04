@@ -89,7 +89,12 @@ function LineChart({ dataset, labels, vuePred, predLabel, predictions }) {
                                 min: 0,
                             }
                         }]
+                    },
+                    tooltips: {
+                        enabled: true,
+                        displayColors: false
                     }
+
                 }}
             />
         </>
