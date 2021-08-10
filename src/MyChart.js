@@ -10,14 +10,14 @@ function MyChart({scale}) {
     const [ predLabel, setPredLabel] = useState(['20:00', '20:30'])
     const [ labels, setLabels] = useState([])
 
-    // useEffect(() => {
-    //     setInterval(() => {
-    //         let  [ fisrt, ...arr ] = data
-    //         arr.push(Math.random()*50)
-    //         setData(arr)
+    useEffect(() => {
+        setInterval(() => {
+            let  [ fisrt, ...arr ] = data
+            arr.push(Math.random()*50)
+            setData(arr)
             
-    //     }, 1500)
-    // }, [])
+        }, 1500)
+    }, [])
 
     useEffect(() => {
         const dateTime = new DateTime()
