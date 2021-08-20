@@ -20,38 +20,7 @@ function MyChart({scale}) {
     }, [])
 
     useEffect(() => {
-        const dateTime = new DateTime()
-        switch(scale) {
-            case "5Y":
-                setLabels(dateTime.fiveYears);
-                break
-            case "1Y":
-                setLabels(dateTime.oneYear);
-                break
-            case "6M":
-                setLabels(dateTime.sixMonths);
-                break
-            case "1M":
-                setLabels(dateTime.oneMonth);
-                break
-            case "1W":
-                setLabels(dateTime.oneWeek);
-                break
-            case "1D":
-                setLabels(dateTime.oneDay);
-                break
-            case "4H":
-                setLabels(dateTime.fourHours);
-                break
-            case "1H":
-                setLabels(dateTime.oneHour);
-                break
-            case "30M":
-                setLabels(dateTime.halfHour);
-                break
-            default:
-                setLabels([])
-        }
+        setLabels(new DateTime(scale).labels)
     }, [scale])
 
     return (
