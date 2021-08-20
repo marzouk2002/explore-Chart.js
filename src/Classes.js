@@ -1,7 +1,8 @@
 class DateTime {
-    constructor() {
+    constructor(scale) {
         this.months = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
         this.days = [ "Sun.", "Mon.", "Tues.", "Wed.", "Thurs.", "Fri.", "Sat."]
+        this.labels = this.getLabels(scale)
     }
 
     get fiveYears() {
@@ -125,6 +126,42 @@ class DateTime {
 
     get  liveScale() {
         return this
+    }
+
+    getLabels(scale) {
+        let labels; 
+        switch(scale) {
+            case "5Y":
+                labels = this.fiveYears;
+                break
+            case "1Y":
+                labels = this.oneYear;
+                break
+            case "6M":
+                labels = this.sixMonths;
+                break
+            case "1M":
+                labels = this.oneMonth;
+                break
+            case "1W":
+                labels = this.oneWeek;
+                break
+            case "1D":
+                labels = this.oneDay;
+                break
+            case "4H":
+                labels = this.fourHours;
+                break
+            case "1H":
+                labels = this.oneHour;
+                break
+            case "30M":
+                labels = this.halfHour;
+                break
+            default:
+                labels = []
+        }
+        return labels
     }
 }
 
